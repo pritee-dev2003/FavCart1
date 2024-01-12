@@ -1,0 +1,186 @@
+{% extends 'base.html'%}
+{% load static%}
+{% block content %}
+<style>
+    .A
+    {
+    min-height:500px;
+    }
+    .about
+    {
+
+         background:red;
+         min-height:300px;
+
+         background-size:cover;
+         padding-top:120px;
+         weidth:50px;
+         margin-top:50px;
+    }
+    .sf5
+    {
+    background:rgba(255,255,255,.3);
+
+     }
+     .bimg
+     {
+     background:url("{% static 'images/banner12.jpg'%}");
+     background-size:cover;
+     background-attachment:fixed;
+     }
+
+</style>
+<div class="container ">
+    <div class="row mx-1 ">
+        <div class="col-sm-12 text-center fs-1"><span style="text-decoration: underline #ff8800;">About</span><b class="text-ocolor">Us</b><br/>
+        <p style="font-size:15px;text-align:center">An About Us page is an opportunity to introduce your company on your own terms.<br/> It’s where potential customers will go to find out why you’re passionate about your products – and why they should be, too.<br/>A well-crafted About Us page is the key to building trust and loyalty with your customers.
+
+
+</p>
+    </div></div>
+        <div class="row mx-1">
+        <div class="col-sm-6 mt-3 pe-5">
+            <div class="embeded-responsive ">
+                <iframe width="560" height="315" class="embeded-responsive" src="https://www.youtube.com/embed/pmaQY4njimo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="col-sm-6 fs-4 ps-3 pt-3 text-center"><h>Picture this: you’re at a dinner party, and someone is talking your ear off about their new business.,.
+
+</h><br/>
+            <p style="font-size:15px;padding-top:13px;padding-left:10px;">Writing about your products or services is simple. If you’ve created your ecommerce business in response to a gap in the market or a pain point that you think people can relate to, then tell that story! People will be curious about the origins behind your ideas.<br/>
+
+
+</p>
+        <a href="#" class="btn bg-ocolor text-center">
+                Read More  </a><br/>
+            <i class="fa-brands fa-facebook ic1 ic2" style="color:#1773ea;"></i>
+            <i class="fa-brands fa-youtube ic1 ic2" style="color:#f70000"></i>
+            <i class="fa-brands fa-twitter ic1 text-primary" style=""></i>
+            <i class="fa-brands fa-instagram ic1 "style="color:#ff0080"></i>
+        </div>
+
+    </div>
+</div>
+<div></div>
+
+<!--start card-->
+<div class="container-fluid bimg">
+<div class="row pt-5 ps-5">
+    <div class="col-sm-6">
+        <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{% static 'images/b1.jpg'%}" class="img-fluid rounded-start pt-3" alt="..." height="1000px">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{% static 'images/b2.jpg'%}" class="img-fluid rounded-start pt-3" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+</div>
+
+<div class="row ps-5">
+    <div class="col-sm-6">
+        <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{% static 'images/b3.jpg'%}" class="img-fluid rounded-start pt-3" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{% static 'images/b4.jpg'%}" class="img-fluid rounded-start pt-3" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+</div>
+
+<!--end card-->
+    <div class="container-fluid pb-0 pt-3 " height="800px">
+
+<div class="row  bg-color"style="margin:0px 0px;">
+    <div class="col-sm-4 ps-">
+        <div class="row">
+            <div class="col-sm-2 text-ocolor fs-1 ps-1"><img src="{% static 'images/about5.png'%}"style="max-height:120px;width:150px"></div>
+                <div class="col-sm-10 pt-1  ps-3 text-center text-ocolor">
+                    <b style="font-size:22px;padding-left:px;"><a>Writing About My <br/>Products</a></b>
+                </div>
+            </div>
+    <div class="row">
+        <div class="col-sm-12 text-light">
+            <a>Writing about your products or services is simple. If you’ve created your ecommerce business in response to a gap in the market or a pain point that you think people can relate to, then tell that story! People will be curious about the origins behind your ideas..</a>
+        </div>
+    </div>
+        </div>
+    <div class="col-sm-4 ps-2 ">
+       <div class="row">
+            <div class="col-sm-2 text-dark fs-1 ps-3"><img src="{% static 'images/about4.jpg'%}"style="max-height:140px;width:150px"></div>
+                <div class="col-sm-10 pt-1 ps-5 text-center text-ocolor">
+                    <b style="font-size:22px;padding-left:55px;">Writing About My<br/> Team</b>
+                </div>
+            </div>
+        <div class="row">
+        <div class="col-sm-12 text-light">
+            <a>Writing about your team means showing customers that there are real, relatable people bringing your business to life. This is your chance to build likeability and trust, both of which go a long way in attracting new customers and retaining older ones. </a>
+        </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="row">
+            <div class="col-sm-2 text-ocolor pt-0 fs-1 ps-3"><img src="{% static 'images/about2.jpg'%}"style="max-height:130px;width:140px"></div>
+                <div class="col-sm-10 pt-1 text-center ps-5 text-ocolor">
+                    <b style="font-size:20px;padding-left:20px;">Writing About My <br/>Core Values</b>
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-sm-12 text-light">
+                <a>Writing about your core values will show customers what your ecommerce business is all about. You can include these as a concise mission statement on your About Us page, and you can also use your values as a guide to organizing the rest of your content.</a>
+        </div>
+    </div>
+    </div>
+
+</div>
+</div>
+</div>
+
+{% endblock %}

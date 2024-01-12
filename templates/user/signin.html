@@ -1,0 +1,57 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<style>
+    .form
+    {
+    min-height:500px;
+    }
+    .sg
+    {
+        margin-top: 30px;
+        font-size: 18px;
+        color:white;
+
+    }
+    .sf3
+    {
+        background: white;
+        min-height: 500px;
+        padding-bottom:30px;
+        background: url("{% static 'images/hero-2.jpg'%}");
+        background-size: cover;
+        background-position: center;
+    }
+    .sf4
+    {
+    background:rgba(0,0,0,.1);
+    padding-bottom:7%;
+    padding-top:3%;
+    box-shadow: 2px 2px 5px 2px gray ;
+     }
+
+
+</style>
+<div class="row sf3">
+    <div class="col-sm-12 fs-2 text-center pb-3 pt-2"><span style="text-decoration: underline #ff8800;">LOGIN</span> <b style="color:#ff9800">HERE...<i class="fa-solid fa-arrow-right-to-bracket pe-1"></i></b></div>
+<div class="col-sm-12">
+<div class="row">
+    <div class="col-sm-5 mx-auto py-5 px-5 sf4">
+        <div style="font-size:30px;text-align:center;">Welcome to FavCart India</div>
+        <p style="font-size:15px;text-align:center;">LogIn to Your Online Shopping</p>
+
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" class="form-control mb-3  rounded-5 mt-4 sg" name="e" placeholder="Enter email" required>
+            <input type="password" class="form-control mb-4 rounded-5 sg" name="p" placeholder="Enter your password" required>
+            <input type="submit" class="form-control btn mb-3 rounded-5 bg-ocolor text-white sgbtn" value="LOGIN"/>
+        </form>
+        <div class="text-center pt-5 fs-4">Don't have an account? <a href="#"class="text-dark"><b class="text-ocolor fs-2">Sign Up</b></a>
+
+        </div>
+
+    </div>
+</div>
+</div>
+</div>
+{% endblock %}

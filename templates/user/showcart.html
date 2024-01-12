@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+{% if not request.session.userid %}
+<script>
+    alert('You have login first...')
+    location.href="/user/signin/"
+</script>
+{% endif%}
+<div class="col-sm-12 fs-2 text-center pb-3 pt-2"><span style="text-decoration: underline #ff8800;">Your Item is</span> <b style="color:#ff9800">Cart
+    <i class="fa-solid fa-cart-shopping"></i></b></div>
+<table class="table table-striped">
+    <tr>
+    <th>product pic</th>
+    <th>price</th>
+    <th>After discount</th>
+    <th>Size</th>
+    <th>color</th>
+    <th>product deliver</th>
+        <th>added date</th>
+        <th>Delete</th>
+        <th>Order</th>
+    </tr>
+    {% for i in cdata %}
+    <tr>
+        <td><img src="/{{i.7}}"class="img-thumbnail"style="max-height:80px;"></td>
+        <td class="text-danger">{{i.1}}</td>
+        <td class="text-success">{{i.2}}</td>
+        <td><span class="btn bg-oclor bn">{{i.3}}</span></td>
+        <td><div style="height:30px;width:30px;border-radius:3px;background:{{i.4}}"></div></td>
+        <td>{{i.6}}</td>
+        <td>{{i.14}}</td>
+        <td><a href="/user/myorder?msg={{i.11}}" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></a></td>
+        <td><a href="/user/showcart?cid={{i.11}}&pid={{i.13}}"class="btn btn-sm bg-ocolor">Order Now</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

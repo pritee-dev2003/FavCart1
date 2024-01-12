@@ -1,0 +1,169 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<style>
+    .hhh
+    {
+    height:56px;
+    width:92px;
+    background:red;
+    border-radius:10px;
+    border-bottom:10px solid black;
+    border-right:5px solid black;
+    }
+    .aaa
+    {
+    height:30px;
+    width:100px;
+    background:#FF8800;
+    transform:translatey(50px);
+    }
+
+</style>
+<div class="row slider">
+        <!--start slider-->
+    <div class=" col-sm-12 p-0">
+       <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'images/banner11.jpg'%}" class="d-block w-100" alt="..." height="550px">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+
+
+    <div class="carousel-item">
+      <img src="{% static 'images/banner9.jpg'%}" class="d-block w-100" alt="..." height="500px">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/banner10.jpg'%}" class="d-block w-100" alt="..." height="500px">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+    </div>
+
+
+        <!--end slider-->
+    </div>
+<div class="row category px-5 py-3">
+        <div class="col-sm-4 w">
+
+            <center>
+                <div class="divbtn1">
+            <a href="/user/womens/" class="btn btn-lg btn1 bn divbtn2" style="width:154px">Women'S</a>
+                </div>
+            </center>
+        </div>
+        <div class="col-sm-4 m">
+            <center>
+                <div class="divbtn1">
+            <a href="/user/mens/" class="btn btn-lg btn1 bn divbtn2" style="width:154px">Men'S</a>
+                </div>
+            </center>
+        </div>
+        <div class="col-sm-4 k">
+            <center>
+                <div class="divbtn1">
+            <a href="/user/kids/" class="btn btn-lg btn1 bn divbtn2" style="width:154px">Kid'S</a>
+                </div>
+            </center>
+        </div>
+</div>
+    <div class="row">
+        {% if data %}
+        {% for x in data %}
+        <div class="col-sm-2 mt-3">
+            <!--start card-->
+            <div class="card w-100 boxshadow">
+  <img src="/{{x.Cpic}}" class="card-img-top"style="max-height:180px;" alt="...">
+  <div class="card-body">
+      <div class="divbtn1">
+      <a href="/user/cpdetail?cid={{x.id}}">
+    <h5 class="card-title btn btn-sm btn-center bn btn1 divbtn2" style="width:154px">{{x.Name}}</h5>
+      </a>
+      </div>
+  </div>
+</div>
+            <!--End card-->
+
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+<div class="row p-2 ">
+    <div class="col-sm-3">
+        <div class="text-center pt-4 fs-3"><span class="text-ocolor">New <b>ARRIVALS</b></span>
+            <i class="fa-solid fa-shirt"></i>
+
+
+    </div>
+        <p class="ps-4">In this collection you'll find the latest trends including alluring low backs, sheer bodices,
+            trendy boho skirts and layering, tone on tone beading, plunging necklines, cape trains, matching accessories,
+            contemporary jumpsuits, short dresses and on-trend plainer, less embellished sleek gowns.
+
+</p>
+       <center>
+           <div class="divbtn1">
+           <a href="#" class=" btn bg-ocolor divbtn2" style="width:154px;">New Arrivals</a>
+           </div>
+       </center>
+    </div>
+       <!--start product-->
+    {% for a in prodata %}
+        <div class="col-sm-3 py-2">
+
+            <div class="card bg-light boxshadow">
+                <img src="/{{a.ppic}}" style="max-height:300px;"/>
+                <div style="transform:rotate(-35deg)">
+                    <div class="text-center" style="height:30px;width:90px;background:red;transform:translate(172px,-310px);line-height:30px;color:white;border-radius:3px;"><b>NEW</b    ></div>
+                </div>
+                <div class="card-body ">
+                    <h5 class="card-title">{{a.pcategory}}</h5>
+                    <hr class="divider"/>
+                    <b class="btn bg-ocolor">
+                        <i class="fa-solid fa-indian-rupee-sign"></i></b>
+                    <b class="text-danger fs-4"><s>{{a.pprice}}/</s></b>
+                    <b class="text-dark fs-4">{{a.dprice}}/</s></b>
+                    <p class="btn btn-sm bg-ocolor float-end">{{a.psize}}</p><br/>
+                    <div style="height:20px;width:20px;border-radius:2px;margin-top:5px;background:{{a.pcolor}}"></div>
+                    <i class="text-muted "><b>{{a.pdel}}</b> </i><br/>
+                    <a href="/user/viewproduct/?abc={{a.id}}" class="btn btn-sm bg-ocolor">Order Now</a>
+                    <a href="/user/mcart?pid={{a.id}}" class="btn btn-sm bg-ocolor float-end ">Add to Cart
+                        <i class="fa-solid fa-cart-shopping text-color"></i></a>
+                    <span class="text-muted"><br/> <b>Date:</b>{{a.pdate}}<br/>
+                    </span>
+                </div>
+                </div>
+            </div>
+    {% endfor %}
+
+        <!--End product-->
+
+
+
+</div>
+{% endblock %}
+

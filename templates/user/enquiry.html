@@ -1,0 +1,157 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<style>
+    .r
+    {
+        background:rgba(256,256,256,.4);
+        padding: 30px 30px;
+        box-shadow: 2px 2px 5px 2px gray ;
+    }
+    .c8
+    {
+
+        min-height: 560px;
+        padding: 0px 20px;
+    }
+    .c4
+    {
+        background: rgba(224, 242, 241,.5);
+        min-height: 560px;
+        border-radius: 5px;
+        padding: 30px 35px;
+    }
+    .cf1
+    {
+        background: wheat;
+        min-height: 600px;
+        padding: 0% 13%;
+        padding-bottom: 25px;
+        background: url("{% static 'images/hero-1.jpg'%}");
+        background-size: cover;
+        background-position: center;
+
+    }
+    .rt
+    {
+        margin-top: 30px;
+        font-size: 18px;
+    }
+    .btn1
+    {
+        padding: 2% 5%;
+        margin-top: 20px;
+        background: white;
+        border:1px solid #ff8800;
+        color: #ff9800;
+        border-radius: 3px;
+
+    }
+    .btn1:hover
+    {
+        background: #ff8800;
+        color: white;
+        transition: all ease-in .3s;
+    }
+    .b1{
+        border:1px solid gray;
+        border-radius: 3px;
+        height: 40px;
+    }
+    .ic3
+    {
+        margin-right: 10px;
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+        background: #ff8800;
+        font-size: 25px;
+        line-height: 35px;
+        text-align: center;
+        color: white;
+    }
+    .txti
+    {
+        height:40px ;
+        width: 40px;
+        border: 1px solid gray;
+    }
+</style>
+<div class="container-fluid cf1">
+    <div class="row">
+        <div class="col-sm-12 fs-2 text-center pb-3 pt-2"><span style="text-decoration: underline #ff8800;">Contact</span> <b style="color:#ff9800">Us</b></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row r">
+                <div class="col-sm-8 c8">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div style="font-size: 25px;">Send Your Message</div>
+                        <div class="row">
+                            <div class="col-sm-6 rt">
+                                Your Name : <br/>
+                                <div class="input-group">
+                                    <i class="input-group-text bg-ocolor text-light txti"><i class="fa-solid fa-user"></i></i>
+                                    <input type="text" name="name" class="form-control b1" autocomplete="of" placeholder="Enter Your Name* ">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 rt">
+                                Your Contact : <br/>
+                                <div class="input-group">
+                                    <i class="input-group-text bg-ocolor text-light txti"><i class="fa-solid fa-phone"></i></i>
+                                    <input type="number" name="mob" class="form-control b1" autocomplete="of" placeholder="Enter Your Contact Number* ">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row rt">
+                            <div class="col-sm-12">
+                                Your Email : <br>
+                                <div class="input-group">
+                                    <i class="input-group-text bg-ocolor text-light txti"><i class="fa-solid fa-envelope"></i></i>
+                                    <input type="email" name="email" class="form-control b1" autocomplete="of" required placeholder="Enter Your Email*">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row rt">
+                            <div class="col-sm-12">
+                                Your Message : <br><textarea name="msg" class="form-control" rows="3" placeholder="Type Yore Message Here*"></textarea>
+                           </div>
+                        </div>
+                        <input type="submit" value="SEND MESSAGE" class="btn btn1">
+                    </form>
+                </div>
+                <div class="col-sm-4 c4">
+                    <div class="fs-3">Contact Info</div>
+                    <div class="fs-5 ps-3 py-1"><i class="fa-solid fa-location-dot ic3"></i>Offline Address</div>
+                    <p class="ps-5" style="font-size: 15px;">Sukrauli bazar kushinagar<br>
+                        Pincode no-274207<br>
+                    Post-Sukrauli<br>
+                        Thana-Hata
+                    </p>
+                    <div class="fs-5 ps-3 py-2"><i class="fa-solid fa-phone ic3"></i>Call Us</div>
+                    <p>
+                        <a href="" class="ps-5" style="text-decoration: none;color: black; font-size: 15px;">+91 7007881202</a><br/>
+                        <a href="" class="ps-5" style="text-decoration: none;color:black;font-size: 15px;">+91 6386623856</a>
+                    </p>
+                    <div class="fs-5 ps-3 py-2"><i class="fa-solid fa-envelope ic3"></i>Maill Us</div>
+                    <p>
+                        <a href="" class="ps-5" style="text-decoration: none;color: black;font-size: 15px;">priteesingh@2003gmail.com</a><br/>
+                        <a href="" class="ps-5" style="text-decoration: none;color:black;font-size: 15px;">spritee004@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mx-auto">
+        <div class="col-sm-8">
+            {% if m %}
+            <p class="alert alert-success">
+                YOUR MESSAGE SEND SUCCESSFULLY
+            </p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<div class="row fs-2">Google <b class="text-ocolor">Map</b></div>
+{% endblock %}
